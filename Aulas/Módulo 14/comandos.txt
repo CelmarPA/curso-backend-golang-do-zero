@@ -1,0 +1,119 @@
+Comandos Linux, PowerShell e CMD - Guia Comparativo
+
+=====================================================
+1. pwd
+-----------------------------------------------------
+🐧 Linux / WSL:
+  pwd
+  -> Mostra o caminho completo do diretório atual.
+
+🪟 PowerShell:
+  Get-Location   (ou apenas pwd, pois é alias)
+
+💻 CMD:
+  cd
+  -> Mostra o diretório atual.
+
+=====================================================
+2. ls
+-----------------------------------------------------
+🐧 Linux / WSL:
+  ls
+  -> Lista arquivos e pastas do diretório atual.
+
+🪟 PowerShell:
+  ls ou Get-ChildItem
+
+💻 CMD:
+  dir
+
+=====================================================
+3. cd
+-----------------------------------------------------
+🐧 Linux / WSL:
+  cd nome_da_pasta
+  cd ..
+  cd ~
+
+🪟 PowerShell:
+  cd ou Set-Location
+
+💻 CMD:
+  cd nome_da_pasta
+  cd ..
+
+=====================================================
+4. mkdir
+-----------------------------------------------------
+🐧 Linux / WSL:
+  mkdir nome_da_pasta
+  mkdir -p caminho/pasta
+
+🪟 PowerShell:
+  mkdir nome_da_pasta
+  New-Item -ItemType Directory -Name nome_da_pasta
+
+💻 CMD:
+  mkdir nome_da_pasta
+  md nome_da_pasta
+
+=====================================================
+5. touch
+-----------------------------------------------------
+🐧 Linux / WSL:
+  touch nome_do_arquivo.txt
+
+🪟 PowerShell:
+  New-Item nome_do_arquivo.txt -ItemType File
+
+💻 CMD:
+  type nul > nome_do_arquivo.txt
+
+=====================================================
+6. rm
+-----------------------------------------------------
+🐧 Linux / WSL:
+  rm arquivo.txt
+  rm -r pasta/
+  rm -rf pasta/
+
+🪟 PowerShell:
+  rm arquivo.txt
+  Remove-Item arquivo.txt
+  rm -Recurse -Force pasta/
+
+💻 CMD:
+  del arquivo.txt
+  rmdir /s /q nome_da_pasta
+
+=====================================================
+7. cp
+-----------------------------------------------------
+🐧 Linux / WSL:
+  cp origem destino
+  cp -r pasta1 pasta2/
+
+🪟 PowerShell:
+  cp origem destino
+  Copy-Item origem destino
+  cp -Recurse pasta1 pasta2/
+
+💻 CMD:
+  copy origem destino
+  xcopy origem destino /E /I /Y
+  robocopy origem destino /E
+
+=====================================================
+8. cat
+-----------------------------------------------------
+🐧 Linux / WSL:
+  cat arquivo.txt
+  cat > novo.txt   (cria novo arquivo)
+  cat arquivo1.txt >> arquivo2.txt
+
+🪟 PowerShell:
+  cat arquivo.txt
+  Get-Content arquivo.txt
+
+💻 CMD:
+  type arquivo.txt
