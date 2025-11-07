@@ -5,23 +5,27 @@
 package main
 
 import (
+	"bufio"
 	"fmt"
+	"os"
 	"strings"
 )
 
 // Forma mais compacta
 // func main() {
-// 	var word string
 // 	fmt.Print("Digite uma palavra: ")
-// 	fmt.Scanln(&word)
+// 	reader := bufio.NewReader(os.Stdin)
+// 	word, _ := reader.ReadString('\n')
+// 	word = strings.TrimSpace(word)
 // 	fmt.Println(strings.Join(strings.Split(word, ""), " "))
 // }
 
 
 func main () {
-	var word string
 	fmt.Print("Digite uma palavra: ")
-	fmt.Scanln(&word)
+	reader := bufio.NewReader(os.Stdin)
+	word, _ := reader.ReadString('\n')
+	word = strings.TrimSpace(word)
 
 	// Quebra a string em runas (suporta acentos e emojis)
 	var chars []string	

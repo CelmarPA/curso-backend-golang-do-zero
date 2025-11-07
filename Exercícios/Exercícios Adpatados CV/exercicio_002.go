@@ -12,16 +12,11 @@ import (
 )
 
 func main() {
-	var name string
-	fmt.Print("Digite seu nome: ")
-	fmt.Scan(&name)
-	fmt.Println("Olá", name, "!")
-
 	reader := bufio.NewReader(os.Stdin)
 
-	fmt.Print("Digite seu nome completo: ")
+	fmt.Print("Digite seu nome: ")
 	nome, _ := reader.ReadString('\n')
 	nome = strings.TrimSpace(nome)
 
-	fmt.Println("Olá", nome, "!")
+	fmt.Printf("Olá %s!\n", nome)
 }
