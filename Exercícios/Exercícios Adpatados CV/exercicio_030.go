@@ -15,8 +15,6 @@ func main() {
 	fmt.Print("Digite um número para calcular sua sequencia de Fibonacci: ")
 	fmt.Scan(&num)
 
-	
-
 	fa := 1
 	fb := 1
 
