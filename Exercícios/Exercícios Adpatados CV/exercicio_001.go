@@ -1,4 +1,4 @@
-// Exercício 001: Escreva um programa em Go que exiba 'Olá, mundo!' na tela.
+// Exercício 001 - Crie um programa que escreva 'Olá, Mundo!' na tela.
 
 //go:build ignore
 

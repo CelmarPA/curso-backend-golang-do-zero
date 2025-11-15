@@ -1,4 +1,5 @@
-// Exercício 029: Jogo da adivinhação: o computador pensa em um número e o usuário tenta acertar.
+// Exercício 029: Escreva um programa que leia a velocidade de um carro. Se ele ultrapassar 80Km/h, mostre uma 
+// mensagem dizendo que ele foi multado. A multa vai custar R$7,00 por cada Km/h acima do limite.
 
 //go:build ignore
 
@@ -6,40 +7,19 @@ package main
 
 import (
 	"fmt"
-	"math/rand"
 )
 
 func main() {
-	var cpuGuess, userGuess, chances int
-	var winner bool
+	var speed int
 
-	fmt.Println("Tente adivinha o número que eu pensei entre 1 a 10 você tem 3 chances!!")
+	fmt.Print("Digite a velocidade do veículo em Km/h: ")
+	fmt.Scan(&speed)
 
-	min := 1
-	max := 10
-	cpuGuess = rand.Intn(max - min + 1) + min // Número aleatório em  um intervalo personalizado
-	chances = 3
-	fmt.Println(cpuGuess)
-	for {		
-		if chances > 0 {
-			fmt.Printf("Você possui %d chances!\n", chances)
-			fmt.Print("Qual seu palpite? ")
-			fmt.Scan(&userGuess)
-			
-			if userGuess == cpuGuess {
-				winner = true
-				break
-			} else {
-				chances--
-			}
-		} else {
-			break
-		}
-	}
+	if speed > 80 {
+		fine := float64((speed - 80) * 7)
+		fmt.Printf("Você ultrapassou o limite de velocidade de 80 Km/h, será multado em R$%.2f!\n", fine)
+		return
+	} 
 
-	if winner {
-		fmt.Printf("Você ganhou eu pensei no número %d!!!\n", cpuGuess)
-	} else {
-		fmt.Printf("Você perdeu eu pensei no número %d!!!\n", cpuGuess)
-	}
+	fmt.Println("Você está dentro do limite de velocidade permitido. Continue viajando com segurança!")
 }

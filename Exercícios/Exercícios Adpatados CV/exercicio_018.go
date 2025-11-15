@@ -1,4 +1,4 @@
-// Exercício 018: Leia um número inteiro e diga se é par ou ímpar.
+// Exercício 018: Leia um ângulo em graus e mostre o seno, cosseno e tangente.
 
 //go:build ignore
 
@@ -6,17 +6,20 @@ package main
 
 import (
 	"fmt"
+	"math"
 )
 
 func main() {
-	var num int
-	
-	fmt.Print("Digite um número inteiro para saber se é par ou ímpar: ")
-	fmt.Scan(&num)
+	var angle float64
 
-	if num % 2 == 0 {
-		fmt.Printf("O número %d é PAR!\n", num)
-	} else {
-		fmt.Printf("O número %d é ÍMPAR!\n", num)
-	}
+	fmt.Print("Digite o ângulo para obter seu seno, cosseno e tangente: ")
+	fmt.Scan(&angle)
+
+	radians := angle * (math.Pi / 180)
+
+	sine := math.Sin(radians)
+	cosine := math.Cos(radians)
+	tangent := math.Tan(radians)
+
+	fmt.Printf("O ângulo de %.2f graus tem seno de %.3f, cosseno de %.3f e tangente de %.3f!\n", angle, sine, cosine, tangent)
 }

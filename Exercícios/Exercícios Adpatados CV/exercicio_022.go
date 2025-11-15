@@ -1,20 +1,33 @@
-// Exercício 022: Faça um programa que leia um número e gere sua tabuada usando loop 'for'.
+// Exercício 022: Faça um programa que leia uma frase e conte quantas letras 'a' aparecem, a posição da primeira e da última ocorrência
 
 //go:build ignore
 
 package main
 
 import (
+	"bufio"
 	"fmt"
+	"os"
+	"strings"
 )
 
 func main() {
-	var num int
-	fmt.Print("Digite um número para ver sua tabuada: ")
-	fmt.Scan(&num)
+	var count int
 
-	fmt.Println("======= TABUADA DO NÚMERO", num, "=======")
-	for i := 1; i <= 10; i++ {
-		fmt.Printf("%d X %d = %d\n", num, i, num * i)
-	} 
+	fmt.Print("Digite uma frase para contar quantas letras 'a's ela possui e a primeira e última ocorrência: ")
+	reader := bufio.NewReader(os.Stdin)
+	phrase, _ := reader.ReadString('\n')
+	phrase = strings.TrimSpace(phrase)
+
+	
+	for _, letter := range(phrase) {
+		if strings.ToLower(string(letter)) == "a" {
+			count++
+		}
+	}
+
+	firstIndex := strings.Index(phrase, "a")
+	lastIndex := strings.LastIndex(phrase, "a")
+
+	fmt.Printf("A frase %s; possui %d letras 'a's. Primeira ocorrência no índice %d e a última no índice %d \n", phrase, count, firstIndex, lastIndex)
 }

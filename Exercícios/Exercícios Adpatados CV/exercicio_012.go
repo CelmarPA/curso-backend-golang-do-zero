@@ -1,4 +1,4 @@
-// Exercício 012: Leia o preço de um produto e mostre o preço com 5% de desconto.
+// Exercício 012: Leia o preço de um produto e mostre seu novo preço com 5% de desconto.
 
 //go:build ignore
 

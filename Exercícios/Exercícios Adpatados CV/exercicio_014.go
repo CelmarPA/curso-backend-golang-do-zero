@@ -1,4 +1,4 @@
-// Exercício 014: Converta metros para milhas (use constante de conversão).
+// Exercício 014: Converta uma temperatura em °C para °F.
 
 //go:build ignore
 
@@ -9,14 +9,10 @@ import (
 )
 
 func main() {
-	const fator = 1609
-
-	var distMetros float64
-
-	fmt.Print("Digite a distância em metros para converter em milhas: ")
-	fmt.Scan(&distMetros)
-
-	distMilhas := distMetros / fator
-
-	fmt.Printf("A distância de %.2f metros convertida é igual a %.4f milhas.\n", distMetros, distMilhas)
+	var celsius float64
+	fmt.Print("Digita a temperatura em Celsius para converter em Fahrenheit: ")
+	fmt.Scan(&celsius)
+	fahreneit := (celsius * 9 / 5) + 32
+	
+	fmt.Println("Convertendo em fahreneit temos:", fahreneit, "F.")
 }

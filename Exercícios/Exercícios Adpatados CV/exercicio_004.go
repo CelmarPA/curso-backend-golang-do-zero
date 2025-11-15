@@ -1,4 +1,4 @@
-// Exercício 004: Leia uma variável e mostre seus caracteres separados (ex.: 'abc' -> 'a b c').
+// Exercício 004: Faça um programa que leia uma entrada do usuário e identifique se ela representa um número inteiro, número real ou texto, exibindo o tipo identificado.
 
 //go:build ignore
 
@@ -8,31 +8,28 @@ import (
 	"bufio"
 	"fmt"
 	"os"
+	"strconv"
 	"strings"
 )
 
-// Forma mais compacta
-// func main() {
-// 	fmt.Print("Digite uma palavra: ")
-// 	reader := bufio.NewReader(os.Stdin)
-// 	word, _ := reader.ReadString('\n')
-// 	word = strings.TrimSpace(word)
-// 	fmt.Println(strings.Join(strings.Split(word, ""), " "))
-// }
-
-
 func main () {
-	fmt.Print("Digite uma palavra: ")
+	fmt.Print("Digite algo para verifica o que ela representa: ")
 	reader := bufio.NewReader(os.Stdin)
-	word, _ := reader.ReadString('\n')
-	word = strings.TrimSpace(word)
+	input, _ := reader.ReadString('\n')
+	input = strings.TrimSpace(input)
 
-	// Quebra a string em runas (suporta acentos e emojis)
-	var chars []string	
-	for _, letter := range word {
-		chars = append(chars, string(letter))
+	// Verifica se é inteiro
+	if _, err := strconv.Atoi(input); err == nil {
+		fmt.Println("Tipo: número inteiro!")
+		return
 	}
-	
-	fmt.Println(strings.Join(chars, " "))
-}
 
+	// Verifica se é float
+	if _, err := strconv.ParseFloat(input, 64); err == nil {
+		fmt.Println("Tipo: número real (float)")
+		return
+	}
+
+	// Se não é inteiro nem float é texto
+	fmt.Println("Tipo: texto")
+}

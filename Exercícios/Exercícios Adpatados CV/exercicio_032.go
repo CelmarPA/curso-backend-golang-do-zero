@@ -1,4 +1,4 @@
-// Exercício 032: Leia o ano de nascimento e diga se a pessoa já pode se alistar (considere ano atual).
+// Exercício 032: Faça um programa que leia um ano qualquer e mostre se ele é BISSEXTO.
 
 //go:build ignore
 
@@ -10,15 +10,18 @@ import (
 )
 
 func main() {
-	var yearOfBirth int
-	year := time.Now().Year()
+	var year int
 
-	fmt.Print("Digite o ano do seu nascimento: ")
-	fmt.Scan(&yearOfBirth)
+	fmt.Print("Digite o ano para saber se é bissexto: ")
+	fmt.Scan(&year)
 
-	if year - yearOfBirth >= 18 {
-		fmt.Println("Você já pode se alistar esse ano!")
+	if year == 0 {
+		year = time.Now().Year()
+	}
+
+	if (year % 4 == 0 && year % 100 != 0) || year % 400 == 0 {
+		fmt.Printf("O ano de %d é BISSEXTO!\n", year)
 	} else {
-		fmt.Println("Você ainda não pode alistar!")
+		fmt.Printf("O ano de %d NÃO é BISSEXTO!\n", year)
 	}
 }

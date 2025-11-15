@@ -1,4 +1,4 @@
-// Exercício 003: Leia dois números inteiros e imprima a soma.
+// Exercício 003: Leia dois números e mostre a soma entre eles.
 
 //go:build ignore
 

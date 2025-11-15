@@ -1,4 +1,4 @@
-// Exercício 005: Leia um inteiro e mostre seu antecessor e sucessor.
+// Exercício 005: Faça um programa que leia um número inteiro e mostre o seu antecessor e sucessor.
 
 //go:build ignore
 

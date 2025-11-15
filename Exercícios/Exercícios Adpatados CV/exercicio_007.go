@@ -1,4 +1,4 @@
-// Exercício 007: Leia duas notas e calcule a média aritmética.
+// Exercício 007: Leia as duas notas de um aluno, calcule e mostre a sua média. 
 
 //go:build ignore
 

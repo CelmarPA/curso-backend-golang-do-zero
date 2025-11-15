@@ -1,37 +1,29 @@
-// Exercício 027: Leia um número e verifique se é um número primo.
+// Exercício 027: Ler o nome completo de uma pessoa e mostrar apenas o primeiro e o último nome.
 
 //go:build ignore
 
 package main
 
 import (
+	"bufio"
 	"fmt"
+	"os"
+	"strings"
 )
 
 func main() {
-	var count, num int
+	print("Digite seu nome completo: ")
 
-	fmt.Print("Digite um número para verifica se é primo: ")
-	fmt.Scan(&num)
+	reader := bufio.NewReader(os.Stdin)
+	name, _ := reader.ReadString('\n')
+	name = strings.TrimSpace(name)
 
-	if num < 2 {
-        fmt.Println(num, "não é primo")
-        return
-    }
+	splitName := strings.Split(name, " ")
 
-	if num >= 2 {
-		for i := 1; i <= num / 2; i++ {
-			if num % i == 0 {
-				count++
-			}
-		}
+	if len(splitName) < 2 {
+		fmt.Println("Você digitou apenas o primeiro nome!")
+		return
 	}
-	
-	count++
 
-	if count == 2 {
-		fmt.Println(num, "é primo")
-	} else {
-		fmt.Println(num, "não é primo")
-	}
+	fmt.Printf("Seu primeiro nome é %s e seu último nome é %s!\n", splitName[0], splitName[len(splitName) - 1])
 }

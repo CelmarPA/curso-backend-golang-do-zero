@@ -1,4 +1,4 @@
-// Exercício 006: Leia um número e mostre o dobro, triplo e a raiz quadrada (use float64).
+// Exercício 006: Leia um número e mostre o seu dobro, triplo e raiz quadrada.
 
 //go:build ignore
 

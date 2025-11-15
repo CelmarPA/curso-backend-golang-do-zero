@@ -1,4 +1,4 @@
-// Exercício 024: Leia uma frase e conte quantas letras 'a' ela contém (case-insensitive).
+// Exercício 024: Leia o nome de uma cidade e diga se ela começa com 'Santo'. 
 
 //go:build ignore
 
@@ -12,19 +12,12 @@ import (
 )
 
 func main() {
-	var count int
-
-	fmt.Print("Digite uma frase para contar quantas letras 'a's ela possui: ")
+	fmt.Print("Digite nome de uma cidade: ")
 	reader := bufio.NewReader(os.Stdin)
-	phrase, _ := reader.ReadString('\n')
-	phrase = strings.TrimSpace(phrase)
+	city, _ := reader.ReadString('\n')
+	city = strings.TrimSpace(city)
 
-	
-	for _, letter := range(phrase) {
-		if strings.ToLower(string(letter)) == "a" {
-			count++
-		}
+	if strings.ToLower(city[:5]) == "santo" {
+		fmt.Println("O nome da cidade começa com Santo!")
 	}
-	
-	fmt.Printf("A frase %s; possui %d letras 'a's.\n", phrase, count)
 }

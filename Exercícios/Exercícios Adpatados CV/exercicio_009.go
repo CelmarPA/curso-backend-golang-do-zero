@@ -1,4 +1,4 @@
-// Exercício 009: Leia um número e mostre sua tabuada (1 a 10).
+// Exercício 009: Faça um programa que leia um número inteiro e mostre a sua tabuada (do 1 ao 10). 
 
 //go:build ignore
 

@@ -1,4 +1,4 @@
-// Exercício 025: Leia um nome e diga se contém 'Silva' (substring).
+// Exercício 025: Leia um nome e verifique se 'Silva' faz parte desse nome.
 
 //go:build ignore
 

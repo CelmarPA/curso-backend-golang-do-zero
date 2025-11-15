@@ -1,4 +1,4 @@
-// Exercício 021: Faça um programa que jogue par ou ímpar com o usuário (use rand).
+// Exercício 021: Faça um programa que leia o preço de um produto e mostre se ele está com promoção (aplique condições). 
 
 //go:build ignore
 
@@ -6,21 +6,24 @@ package main
 
 import (
 	"fmt"
-	"math/rand"
 )
 
 func main() {
-	var player int
+	var value float64
 
-	fmt.Print("Digite um número entre 0 e 10 para jogar par ou ímpar: ")
-	fmt.Scan(&player)
+	fmt.Print("Digite o valor do produto: R$")
+	fmt.Scan(&value)
 
-	cpu := rand.Intn(11)
-	result := player + cpu
-
-	if result % 2 == 0 {
-		fmt.Printf("Resultado %d PAR!\n", result)
-	} else {
-		fmt.Printf("Resultado %d ÍMPAR!\n", result)
+	if value <= 5 {
+		fmt.Println("O produto não está em promoção!")
+		return
+	} else if value <= 10 {
+		fmt.Println("O produto está em promoção com 5% desconto!")
+		return
+	} else if value <= 50 {
+		fmt.Println("O produto está em promoção com 10% desconto!")
+		return
 	}
+
+	fmt.Println("O produto está em promoção com 15% desconto!")
 }

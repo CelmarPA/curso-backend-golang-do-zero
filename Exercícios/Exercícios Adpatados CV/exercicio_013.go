@@ -1,4 +1,4 @@
-// Exercício 013: Calcule a média ponderada de três valores com pesos 2,3,5.
+// Exercício 013: Leia o salário de um funcionário e mostre seu novo salário com 15% de aumento.
 
 //go:build ignore
 
@@ -9,16 +9,12 @@ import (
 )
 
 func main() {
-	var v1, v2, v3 float64
-	fmt.Print("Digite o primeiro valor: ")
-	fmt.Scan(&v1)
-	fmt.Print("Digite o segundo valor: ")
-	fmt.Scan(&v2)
-	fmt.Print("Digite o terceiro valor: ")
-	fmt.Scan(&v3)
+	var wage float64
+	fmt.Print("Digite o salário do funcionário R$")
+	fmt.Scan(&wage)
 
+	raise := wage * 0.15
+	newWage := wage + raise
 
-	weightedAverage := ((v1 * 2) + (v2 * 3) + (v3 * 5)) / (2 + 3 + 5)
-
-	fmt.Printf("A média ponderada dos valores: %.2f, %.2f, %.2f é igual a %.2f.\n", v1, v2, v3, weightedAverage)
+	fmt.Printf("O valor do novo salário é de R$%.2f!\n", newWage)
 }

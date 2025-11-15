@@ -1,4 +1,4 @@
-// Exercício 019: Leia a idade de uma pessoa e classifique: criança, adolescente, adulto, idoso.
+// Exercício 019: Sorteie um dos quatro nomes informados pelo usuário utilizando slices e geração de números aleatórios. 
 
 //go:build ignore
 
@@ -6,22 +6,20 @@ package main
 
 import (
 	"fmt"
+	"math/rand"
 )
 
 func main() {
-	var idade int
+	var name string
+	var names [4]string
 	
-	fmt.Print("Digite sua idade: ")
-	fmt.Scan(&idade)
-
-	switch {
-	case idade < 12:
-		fmt.Println("Criança")
-	case idade < 18:
-		fmt.Println("Adolescente")
-	case idade < 60:
-		fmt.Println("Adulto")
-	default:
-		fmt.Println("Idoso")
+	for i := 0; i < 4; i++ {
+		fmt.Printf("Digite o %dº nome: ", i + 1)
+		fmt.Scan(&name)	
+		names[i] = name
 	}
+
+	index := rand.Intn(4)
+	
+	fmt.Printf("O nome sorteado foi: %s\n", names[index])
 }

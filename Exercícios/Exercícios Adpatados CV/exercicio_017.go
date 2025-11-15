@@ -1,4 +1,4 @@
-// Exercício 017: Leia um valor em reais e calcule quantos dólares pode comprar (cotação informada).
+// Exercício 017: Leia os comprimentos dos catetos de um triângulo retângulo e calcule a hipotenusa.
 
 //go:build ignore
 
@@ -6,16 +6,18 @@ package main
 
 import (
 	"fmt"
+	"math"
 )
 
 func main() {
-	var dollarCost, real float64
-	fmt.Print("Digite a cotação atual do dólar: R$")
-	fmt.Scan(&dollarCost)
-	fmt.Print("Digite o valor em reais para calcular a quantidade de dólares que podem ser adquiridos: R$")
-	fmt.Scan(&real)
+	var adjacentLeg, oppositeLeg float64
 
-	dollars := real / dollarCost
+	fmt.Print("Digite o valor do cateto adjacente: ")
+	fmt.Scan(&adjacentLeg)
+	fmt.Print("Digite o valor do cateto oposto: ")
+	fmt.Scan(&oppositeLeg)
 
-	fmt.Printf("Com R$%.2f você pode comprar US$%.2f.\n", real, dollars)
+	hypotenuse := math.Sqrt(math.Pow(adjacentLeg, 2) + math.Pow(oppositeLeg, 2))
+
+	fmt.Printf("O valor da hipotenusa calculado é de %.2f!\n", hypotenuse)
 }
