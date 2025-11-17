@@ -5,7 +5,7 @@ import (
 	"net/http"
 	"strconv"
 
-	"github.com/CelmarPA/api-students/schemas"
+	"github.com/CelmarPA/curso-backend-golang-do-zero/Aulas/Modulo_12/Swegger/schemas"
 	"github.com/labstack/echo/v4"
 	"github.com/rs/zerolog/log"
 	"gorm.io/gorm"

@@ -1,7 +1,7 @@
 package db
 
 import (	
-	"github.com/CelmarPA/api-students/schemas"
+	"github.com/CelmarPA/curso-backend-golang-do-zero/Aulas/Modulo_12/Swegger/schemas"
 	"github.com/rs/zerolog/log"
 	"gorm.io/driver/sqlite"
 	"gorm.io/gorm"

@@ -5,12 +5,12 @@ import (
 	"log/slog"
 	"net/http"
 	
-	"github.com/CelmarPA/api-students/db"
+	"github.com/CelmarPA/curso-backend-golang-do-zero/Aulas/Modulo_12/Swegger/db"
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
 	echoSwagger "github.com/swaggo/echo-swagger"
 
-	_ "github.com/CelmarPA/api-students/docs"
+	_ "github.com/CelmarPA/curso-backend-golang-do-zero/Aulas/Modulo_12/Swegger/docs"
 )
 
 type API struct {

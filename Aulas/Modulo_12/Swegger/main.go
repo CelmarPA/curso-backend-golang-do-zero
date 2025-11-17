@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/CelmarPA/api-students/api"
+	"github.com/CelmarPA/curso-backend-golang-do-zero/Aulas/Modulo_12/Swegger/api"
 	"github.com/rs/zerolog/log"
 )
 
